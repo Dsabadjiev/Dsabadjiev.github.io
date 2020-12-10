@@ -32,7 +32,7 @@
 
 
 #greece{
-	border:#033 solid 2px;
+	/* border:#033 solid 2px; */
 	padding:5px;
 	
 	float:right;
@@ -40,6 +40,8 @@
 	text-align:center;
 	width:30%;
 	background-color:#add;
+	background-image: radial-gradient(#244,#add);
+
 }
 #greece img{
 

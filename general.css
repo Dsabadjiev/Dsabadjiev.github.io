@@ -6,10 +6,8 @@
 	padding: 0;
 }
 
-/* nave stuffs*/
- .dropdown ul{
-	display:none;
-}
+/* nav stuffs*/
+
 
 nav  li{
 	list-style: none;
@@ -19,6 +17,7 @@ nav{
       /*The following code for position was taken from 
       https://css-tricks.com/almanac/properties/p/position/*/
       position:fixed;
+      top: 0px;
       /* position:absolute; */
       /* z-index:3000; */
 }    
@@ -59,7 +58,7 @@ was set up using only divs
 nav ul{
 	background-color: rgba(255,255,255,0);
 	
-	display:none;
+	/*display:none;*/
 	
 }
 nav ul a{
@@ -72,8 +71,10 @@ nav ul a{
 	padding-top:1px; */
 }
 	
-
-
+/*nav dropdown effects code */
+ .dropdown ul{
+	display:none;
+}
 .dropdown:hover ul{
 	display:block;
 	
@@ -81,10 +82,30 @@ nav ul a{
 	border:none;
 	margin-top:4px;
 	margin-bottom:4px;
+
+/* maybe unnecessary*/
+	/*position: relative; */ 
+	
+
 	/* These were for testing if this code was reached
 	background-color:fuchsia;
 	text-size:1000px;
 	line-height:1000px; */
+}
+/*nav submenu code*/
+.dropdown:hover .dropdown2 ul{
+	display: none;
+	/*position: absolute;
+	left: -9999px;*/
+}
+.dropdown:hover .dropdown2:hover ul{
+	display: block;
+	/*position: absolute;*/
+	/*left: 100px;*/
+}
+/*cheap workaround to fix issue that cannot select second dropdown2 item in list since after moving mouse down dropdown disappears  */
+.dropdown:hover .dropSpace {
+	height: 100px;
 }
 
 
@@ -122,17 +143,33 @@ footer{
 	clear:both;
 	overflow:auto;
 	width:85vw;
-	/* background-color:#cee; */
-	background-attachment: fixed; 
-	background-image: radial-gradient(#dff, #bdd);
-	border:#033 solid 2px;
 	margin:auto;
 	margin-top:5px;
 	padding:10px;
+	/* background-color:#cee; */
+	/*background-attachment: fixed; */
+	background-image: radial-gradient(#add,#eeffff);
+
+	/* weird squares on the border */
+	/*border:#eeffff solid 10px;*/
+
+	/*border:rgba(220,256,256,0) solid 10px;*/
+	 /*border-image-source: radial-gradient(#743ad5, #d53a9d);*/
+	/*border-image-source: linear-gradient(to left, #743ad5, #d53a9d);*/
+	
 	/*-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 	box-shadow: 1px 2px 3px rgba(0,0,0,.5);*/
+
+	/*-webkit-border-radius: 8px;*/
+/*-moz-border-radius: 8px;*/
+/*border-radius: 8px;*/
+
+/*-webkit-box-shadow: #666 0px 2px 3px;
+-moz-box-shadow: #666 0px 2px 3px;
+box-shadow: #666 0px 2px 3px;*/
+
 }
 
 #content p{
@@ -156,7 +193,7 @@ img, iframe{
 	width:30%;
 	margin:5px;
 }
-h2{
+h2, h3{
 	clear:both;
 }
 .italics{

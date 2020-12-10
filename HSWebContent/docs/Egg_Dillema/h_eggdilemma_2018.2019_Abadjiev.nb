@@ -1,0 +1,1245 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     44809,       1237]
+NotebookOptionsPosition[     38510,       1122]
+NotebookOutlinePosition[     39933,       1168]
+CellTagsIndexPosition[     39890,       1165]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["An Eggciting Dilemma", "Title",
+ CellChangeTimes->{{3.752674654118631*^9, 3.752674677817957*^9}, {
+  3.752925792860027*^9, 
+  3.7529257932564077`*^9}},ExpressionUUID->"1b7b4a37-7b7a-4159-80fa-\
+865748fd52b0"],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Section",
+ CellChangeTimes->{{3.752674688345235*^9, 
+  3.752674689457901*^9}},ExpressionUUID->"faf54d16-8e7d-41bc-a77e-\
+b5654dcd72bf"],
+
+Cell["\<\
+A farmer was taking her eggs to market in her cart, and she hit a pothole, \
+which knocked over all the containers of eggs. Though she herself was unhurt, \
+every egg was broken. So, she went to her insurance agent, who asked how many \
+eggs she had. She said that she did not know, but remembered some things from \
+the various ways she tried packing the eggs. \
+\>", "Text",
+ CellChangeTimes->{{3.752674716338151*^9, 3.7526747249721727`*^9}, 
+   3.752925935454138*^9},ExpressionUUID->"d68c9408-7537-4aa7-88b3-\
+6fbc8a376feb"],
+
+Cell["\<\
+She knows when she put the eggs in groups of three, there was one egg left \
+over. When she put them in groups of four, there was also one egg left over. \
+When she put them in groups of five, there were two eggs left over and when \
+she put them in groups of six, there was one egg left over. But when she put \
+them in groups of seven, she ended up with complete groups of seven with no \
+eggs left over. \
+\>", "Text",
+ CellChangeTimes->{{3.752674716338151*^9, 
+  3.7526747416552577`*^9}},ExpressionUUID->"6d71d4c8-2484-414a-ac87-\
+e6a82b56f242"],
+
+Cell["\<\
+Your task is to answer the questions: What can the farmer and insurance agent \
+figure out from this information about how many eggs the farmer had? Is there \
+more than one possibility? Carefully explain. \
+\>", "Text",
+ CellChangeTimes->{{3.752674716338151*^9, 
+  3.7526747436373453`*^9}},ExpressionUUID->"64dd18d2-3c82-429d-90fa-\
+ff9995a3535e"],
+
+Cell[CellGroupData[{
+
+Cell["Translation into math", "Subsection",
+ CellChangeTimes->{{3.7526756628777437`*^9, 
+  3.752675671709075*^9}},ExpressionUUID->"5641c419-b322-49f8-bebb-\
+3d456de61811"],
+
+Cell["\<\
+Let the number of eggs the farmer has be x. Since when she put the eggs into \
+groups of three there is 1 left over, when x is divided by 3 there is a \
+remainder of 1, or in mathematical notation\
+\>", "Text",
+ CellChangeTimes->{{3.7526756749934764`*^9, 3.7526757435273905`*^9}, {
+  3.752675779158079*^9, 
+  3.752675786673766*^9}},ExpressionUUID->"90b1cac9-c4d8-4c24-82bb-\
+43659751a5c7"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TagBox[
+   RowBox[{
+    RowBox[{"x", 
+     RowBox[{
+      StyleBox["mod",
+       FontFamily->"Times",
+       FontWeight->"Plain",
+       FontSlant->"Plain"], "\[InvisibleApplication]", "3"}]}], 
+    "\[Congruent]", "1"}],
+   "MathMLPresentationTag",
+   AutoDelete->True], 
+  TraditionalForm]],ExpressionUUID->"c2199e70-34a3-4fc2-88c8-0859b142934f"]], \
+"Text",
+ CellChangeTimes->{
+  3.7526758121505885`*^9},ExpressionUUID->"695f68c0-6698-4806-95a3-\
+843ffb52add4"],
+
+Cell["\<\
+Similarly, we can translate the other observations of the number of eggs. \
+When she put them in groups of four, there was also one egg left over:\
+\>", "Text",
+ CellChangeTimes->{{3.752675816382561*^9, 
+  3.7526758624256334`*^9}},ExpressionUUID->"0353d245-6aec-4e80-b15e-\
+2729a77faa77"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"x", " ", 
+    RowBox[{
+     StyleBox["mod",
+      FontFamily->"Times",
+      FontWeight->"Plain",
+      FontSlant->"Plain"], "\[InvisibleApplication]", "4"}]}], "\[Congruent]",
+    "1"}], TraditionalForm]],ExpressionUUID->"205c6d79-73fb-4b79-8913-\
+6f0854b24788"]], "Text",
+ CellChangeTimes->{
+  3.7526758121505885`*^9, {3.7526758949607067`*^9, 3.752675895268485*^9}, {
+   3.752677387678971*^9, 
+   3.752677387678971*^9}},ExpressionUUID->"8e296a95-4992-4069-bf32-\
+812ccdaa0067"],
+
+Cell["\<\
+When she put them in groups of five, there were two eggs left over and when \
+she put them in groups of six, there was one egg left over:\
+\>", "Text",
+ CellChangeTimes->{{3.7526759123876457`*^9, 
+  3.7526759140390224`*^9}},ExpressionUUID->"877b7e9a-9547-41a0-ac4f-\
+44da5af4e059"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"x", " ", 
+    RowBox[{
+     StyleBox["mod",
+      FontFamily->"Times",
+      FontWeight->"Plain",
+      FontSlant->"Plain"], "\[InvisibleApplication]", "5"}]}], "\[Congruent]",
+    "2"}], TraditionalForm]],ExpressionUUID->"3ce34761-475b-45ea-976d-\
+a72b19511ac8"]], "Text",
+ CellChangeTimes->{
+  3.7526758121505885`*^9, {3.7526758949607067`*^9, 3.7526759279860916`*^9}, {
+   3.752677389564416*^9, 
+   3.752677391380675*^9}},ExpressionUUID->"9345db8b-c15b-4e3c-a9be-\
+6790bb18c0c2"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"x", " ", 
+    RowBox[{
+     StyleBox["mod",
+      FontFamily->"Times",
+      FontWeight->"Plain",
+      FontSlant->"Plain"], "\[InvisibleApplication]", "6"}]}], "\[Congruent]",
+    "1"}], TraditionalForm]],ExpressionUUID->"91893ebe-4914-4ede-8016-\
+f69a639e16d5"]], "Text",
+ CellChangeTimes->{
+  3.7526758121505885`*^9, {3.7526758949607067`*^9, 3.752675895268485*^9}, {
+   3.7526759378435907`*^9, 3.752675938606391*^9}, {3.752677393528182*^9, 
+   3.7526773955789585`*^9}},ExpressionUUID->"116ac239-1d1a-4bf9-8b96-\
+9aa0669d496a"],
+
+Cell["\<\
+When she put them in groups of seven, she ended up with complete groups of \
+seven with no eggs left over:\
+\>", "Text",
+ CellChangeTimes->{{3.752675954378416*^9, 
+  3.752675969319987*^9}},ExpressionUUID->"d8699c85-79c5-4db1-bed8-\
+7a6b8a42015c"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"x", " ", 
+    RowBox[{
+     StyleBox["mod",
+      FontFamily->"Times",
+      FontWeight->"Plain",
+      FontSlant->"Plain"], "\[InvisibleApplication]", "7"}]}], "\[Congruent]",
+    "0"}], TraditionalForm]],ExpressionUUID->"9a572565-f35d-4eae-901f-\
+8e279cd6b072"]], "Text",
+ CellChangeTimes->{
+  3.7526758121505885`*^9, {3.7526758949607067`*^9, 3.752675895268485*^9}, {
+   3.7526759378435907`*^9, 3.7526759669258623`*^9}, {3.7526773973191566`*^9, 
+   3.7526773973191566`*^9}},ExpressionUUID->"3550e776-b474-49a2-885d-\
+98590e91bef1"],
+
+Cell["\<\
+Then the system of equations that determines the number of eggs is:\
+\>", "Text",
+ CellChangeTimes->{{3.7526759996705427`*^9, 3.7526760038446894`*^9}, {
+  3.752676036358224*^9, 
+  3.7526760480259905`*^9}},ExpressionUUID->"6ff0e38e-f90c-4771-b395-\
+ded4650bc517"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TagBox[GridBox[{
+     {"\[Piecewise]", GridBox[{
+        {
+         RowBox[{
+          TagBox[
+           RowBox[{
+            RowBox[{"x", 
+             RowBox[{
+              StyleBox["mod",
+               FontFamily->"Times",
+               FontWeight->"Plain",
+               FontSlant->"Plain"], "\[InvisibleApplication]", "3"}]}], 
+            "\[Congruent]", "1"}],
+           "MathMLPresentationTag",
+           AutoDelete->True], "\n", 
+          RowBox[{
+           RowBox[{"x", " ", 
+            RowBox[{
+             StyleBox["mod",
+              FontFamily->"Times",
+              FontWeight->"Plain",
+              FontSlant->"Plain"], "\[InvisibleApplication]", "4"}]}], 
+           "\[Congruent]", "1"}], "\n", 
+          RowBox[{
+           RowBox[{"x", " ", 
+            RowBox[{
+             StyleBox["mod",
+              FontFamily->"Times",
+              FontWeight->"Plain",
+              FontSlant->"Plain"], "\[InvisibleApplication]", "5"}]}], 
+           "\[Congruent]", "2"}], "\n", 
+          RowBox[{
+           RowBox[{"x", " ", 
+            RowBox[{
+             StyleBox["mod",
+              FontFamily->"Times",
+              FontWeight->"Plain",
+              FontSlant->"Plain"], "\[InvisibleApplication]", "6"}]}], 
+           "\[Congruent]", "1"}], "\n", 
+          RowBox[{
+           RowBox[{"x", " ", 
+            RowBox[{
+             StyleBox["mod",
+              FontFamily->"Times",
+              FontWeight->"Plain",
+              FontSlant->"Plain"], "\[InvisibleApplication]", "7"}]}], 
+           "\[Congruent]", "0"}]}], " "}
+       },
+       AllowedDimensions->{2, Automatic},
+       Editable->True,
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+         "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.84]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}},
+       Selectable->True]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxItemSize->{
+     "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.35]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   "Piecewise",
+   DeleteWithContents->True,
+   Editable->False,
+   SelectWithContents->True,
+   Selectable->False], 
+  TraditionalForm]],ExpressionUUID->"5ba8253c-2c7c-4567-8a42-8fd49bdd1343"]], \
+"Text",
+ CellChangeTimes->{
+  3.7526758121505885`*^9, {3.7526760561053925`*^9, 3.752676082923434*^9}, {
+   3.752676154490514*^9, 3.7526761544986506`*^9}, {3.752676191803567*^9, 
+   3.752676256608573*^9}, {3.7526773813677015`*^9, 3.752677383115143*^9}, {
+   3.7526779642801175`*^9, 
+   3.7526779706689224`*^9}},ExpressionUUID->"3347c66c-668e-458f-85f2-\
+93d5af843734"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Answer", "Section",
+ CellChangeTimes->{{3.752674771858051*^9, 
+  3.75267477250848*^9}},ExpressionUUID->"9867a065-3227-4a58-b514-\
+f331ea1234ca"],
+
+Cell[TextData[{
+ "The farmer can have 217 + 420 n eggs, where ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    RowBox[{"n", "\[Element]", "\[DoubleStruckCapitalZ]"}],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "ec7254d5-faad-4baa-afb2-b114f1379a7f"],
+ " (n is an integer)"
+}], "Text",
+ CellChangeTimes->{{3.752674777497851*^9, 
+  3.7526748692478647`*^9}},ExpressionUUID->"e3e28734-8d7d-4f79-a320-\
+15dc741680ea"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Solution", "Section",
+ CellChangeTimes->{{3.752675657684555*^9, 
+  3.7526756585215645`*^9}},ExpressionUUID->"c2fb0c0a-ad8e-4a70-ae29-\
+b17c012b0be4"],
+
+Cell[CellGroupData[{
+
+Cell["Solving simultaneous mod equations", "Subsection",
+ CellChangeTimes->{{3.752675984224413*^9, 
+  3.7526759960243196`*^9}},ExpressionUUID->"31ebaa5e-9b0d-4f3a-acc6-\
+fda499656d8d"],
+
+Cell[TextData[{
+ "When solving a mod equation a mod b \[Congruent] c, we know that (a+bn) mod \
+b \[Congruent]a mod b, ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    RowBox[{"n", "\[Element]", "\[DoubleStruckCapitalZ]"}],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "9a93c9a7-839f-45fb-8c67-8c2266553ab8"],
+ " because bn is a multiple of b so a+bn will have the same remainder when \
+divided by b as a. Then, if one solution ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    SubscriptBox["a", "1"],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "5ba24e58-79a1-43a1-a70d-86d8fc010423"],
+ " is found, then since "
+}], "Text",
+ CellChangeTimes->{{3.75267626969355*^9, 3.7526763095251055`*^9}, {
+  3.7526763694982862`*^9, 
+  3.7526765554968233`*^9}},ExpressionUUID->"e116ebcc-51b4-45a8-bf2d-\
+8bb1a220c7a6"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["a", "1"], "+", 
+      RowBox[{"b", "n"}]}], ")"}], 
+    RowBox[{
+     StyleBox["mod",
+      FontFamily->"Times",
+      FontWeight->"Plain",
+      FontSlant->"Plain"], "\[InvisibleApplication]", "b"}]}], "\[Congruent]", 
+   RowBox[{
+    SubscriptBox["a", "1"], 
+    RowBox[{
+     StyleBox["mod",
+      FontFamily->"Times",
+      FontWeight->"Plain",
+      FontSlant->"Plain"], "\[InvisibleApplication]", "b"}]}], "\[Congruent]",
+    "c"}], TraditionalForm]],ExpressionUUID->"849063ef-c26f-454a-8467-\
+33603e23aece"]], "Text",
+ CellChangeTimes->{
+  3.752676606672344*^9, {3.752943031413149*^9, 
+   3.7529430317928457`*^9}},ExpressionUUID->"a5ea03ed-3261-474d-919a-\
+1f0a592d27ce"],
+
+Cell[TextData[{
+ "so the solution set of the equation a mod b \[Congruent] c is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["a", "1"], "+", 
+    RowBox[{"b", "n"}]}], TraditionalForm]],ExpressionUUID->
+  "7df0f240-f620-471a-ad88-01ae049f6f93"],
+ ",  ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    RowBox[{"n", "\[Element]", "\[DoubleStruckCapitalZ]"}],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "c1ff5eca-b0e9-40c0-b0dd-f7f281873cf9"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.7526766160888433`*^9, 
+  3.7526766546175933`*^9}},ExpressionUUID->"b99cefe7-32e9-4094-b1b2-\
+c9cd06994005"],
+
+Cell["If there are two equations now:", "Text",
+ CellChangeTimes->{{3.7526766582497344`*^9, 
+  3.7526766861865897`*^9}},ExpressionUUID->"62643892-5685-4c7b-a367-\
+fc0019a5351b"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"a", 
+        RowBox[{
+         StyleBox["mod",
+          FontFamily->"Times",
+          FontWeight->"Plain",
+          FontSlant->"Plain"], "\[InvisibleApplication]", "b"}]}], 
+       "\[Congruent]", "c"}]},
+     {
+      RowBox[{
+       RowBox[{"a", 
+        StyleBox[" ",
+         FontFamily->"Times",
+         FontWeight->"Plain",
+         FontSlant->"Plain"], 
+        RowBox[{
+         StyleBox["mod",
+          FontFamily->"Times",
+          FontWeight->"Plain",
+          FontSlant->"Plain"], "\[InvisibleApplication]", 
+         "\[ExponentialE]"}]}], "\[Congruent]", "f"}]}
+    }]}], TraditionalForm]], "Text",
+ CellChangeTimes->{{3.752676759370908*^9, 3.7526767826918993`*^9}, 
+   3.7526778932798486`*^9},ExpressionUUID->"a831f54b-295f-43f5-9624-\
+c53a111a117f"],
+
+Cell["\<\
+and we find a number d which is a multiple of both b and e, then the above \
+system also implies that \
+\>", "Text",
+ CellChangeTimes->{{3.7526767414959984`*^9, 3.7526767459829655`*^9}, {
+  3.7526767889452333`*^9, 3.752676841983594*^9}, {3.752943081182776*^9, 
+  3.7529430836296086`*^9}},ExpressionUUID->"a03b5228-2fa4-4877-9c07-\
+d89a8dd207c2"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{GridBox[{
+      {
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"a", "+", "d"}], ")"}], 
+         StyleBox[" ",
+          FontFamily->"Times",
+          FontWeight->"Plain",
+          FontSlant->"Plain"], 
+         RowBox[{
+          StyleBox["mod",
+           FontFamily->"Times",
+           FontWeight->"Plain",
+           FontSlant->"Plain"], "\[InvisibleApplication]", "b"}]}], 
+        "\[Congruent]", "c"}]},
+      {
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"a", "+", "d"}], ")"}], 
+         StyleBox[" ",
+          FontFamily->"Times",
+          FontWeight->"Plain",
+          FontSlant->"Plain"], 
+         RowBox[{
+          StyleBox["mod",
+           FontFamily->"Times",
+           FontWeight->"Plain",
+           FontSlant->"Plain"], "\[InvisibleApplication]", 
+          "\[ExponentialE]"}]}], "\[Congruent]", "f"}]}
+     }], ",", " ", 
+    TagBox[
+     RowBox[{"n", "\[Element]", "\[DoubleStruckCapitalZ]"}],
+     "MathMLPresentationTag",
+     AutoDelete->True]}]}], TraditionalForm]], "Text",
+ CellChangeTimes->{{3.752676759370908*^9, 3.7526767826918993`*^9}, {
+   3.7526768501035843`*^9, 3.752676882558319*^9}, {3.7526769281348495`*^9, 
+   3.7526769353520136`*^9}, 
+   3.7526778869776163`*^9},ExpressionUUID->"68bef93b-bb61-432f-b4ad-\
+d0bad0ad9515"],
+
+Cell[TextData[{
+ "This means that if we find a solution ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    SubscriptBox["a", "1"],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "bb2c4e03-3643-44d8-8077-2cb93e7a57ae"],
+ " to the system then ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    SubscriptBox["a", "1"],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "6af7bde2-1964-4612-babf-e327d9c47d56"],
+ "+dn, ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    RowBox[{"n", "\[Element]", "\[DoubleStruckCapitalZ]"}],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "baca2294-68c1-4a99-a3e4-a5412d10ddf1"],
+ " will also be a solution. However, this will not capture all solutions \
+because d might could be any multiple of both b and e, so this may skip some \
+solutions that would also work. In order to not skip any solutions, d must be \
+the least common multiple of b and e in order for  ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    SubscriptBox["a", "1"],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "1599eb17-6f7f-4fdd-a5de-ae03f9d8bfca"],
+ "+dn, ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    RowBox[{"n", "\[Element]", "\[DoubleStruckCapitalZ]"}],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "5c093132-8bf2-467b-a443-06f1b8bc992d"],
+ " to capture all solutions to the system above."
+}], "Text",
+ CellChangeTimes->{{3.752676886200791*^9, 3.75267694502278*^9}, {
+  3.7526771142047358`*^9, 3.7526771721001935`*^9}, {3.7526772194368668`*^9, 
+  3.752677277797593*^9}},ExpressionUUID->"87705cd3-16e3-4210-8ad3-\
+bb3730e5c049"],
+
+Cell[TextData[{
+ "The same logic applies for systems of many mod equations. Thus, if a \
+solution ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    SubscriptBox["x", "1"],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "b1db6d4b-6ccb-410c-8725-e2f8a2dc306e"],
+ " to the system ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          RowBox[{
+           TagBox[
+            RowBox[{
+             RowBox[{"x", 
+              RowBox[{
+               StyleBox["mod",
+                FontFamily->"Times",
+                FontWeight->"Plain",
+                FontSlant->"Plain"], "\[InvisibleApplication]", "3"}]}], 
+             "\[Congruent]", "1"}],
+            "MathMLPresentationTag",
+            AutoDelete->True], "\n", 
+           RowBox[{
+            RowBox[{"x", " ", 
+             RowBox[{
+              StyleBox["mod",
+               FontFamily->"Times",
+               FontWeight->"Plain",
+               FontSlant->"Plain"], "\[InvisibleApplication]", "4"}]}], 
+            "\[Congruent]", "1"}], "\n", 
+           RowBox[{
+            RowBox[{"x", " ", 
+             RowBox[{
+              StyleBox["mod",
+               FontFamily->"Times",
+               FontWeight->"Plain",
+               FontSlant->"Plain"], "\[InvisibleApplication]", "5"}]}], 
+            "\[Congruent]", "2"}], "\n", 
+           RowBox[{
+            RowBox[{"x", " ", 
+             RowBox[{
+              StyleBox["mod",
+               FontFamily->"Times",
+               FontWeight->"Plain",
+               FontSlant->"Plain"], "\[InvisibleApplication]", "6"}]}], 
+            "\[Congruent]", "1"}], "\n", 
+           RowBox[{
+            RowBox[{"x", " ", 
+             RowBox[{
+              StyleBox["mod",
+               FontFamily->"Times",
+               FontWeight->"Plain",
+               FontSlant->"Plain"], "\[InvisibleApplication]", "7"}]}], 
+            "\[Congruent]", "0"}]}], " "}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False], TraditionalForm]],ExpressionUUID->
+  "ec14c279-bede-4bde-985d-752dc92b8fb3"],
+ "is found, then the full solutions will be ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", ",", 
+    RowBox[{
+     RowBox[{"+", "n"}], "\[CenterDot]", 
+     RowBox[{"lcm", "(", 
+      RowBox[{"3", ",", "4", ",", "5", ",", "6", ",", "7"}], ")"}]}]}], 
+   TraditionalForm]],ExpressionUUID->"1f1ae763-d58c-46f1-9347-a40d65a6d527"],
+ ",  ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    RowBox[{"n", "\[Element]", "\[DoubleStruckCapitalZ]"}],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "ecf021e6-4170-491f-bedf-313ccd54b4c1"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.752677226089015*^9, 3.7526772392639046`*^9}, {
+  3.75267728101575*^9, 3.7526774094344473`*^9}, {3.752677483310418*^9, 
+  3.7526775189966125`*^9}},ExpressionUUID->"bf9fdc10-68f5-4829-baf7-\
+d03d8ea75282"],
+
+Cell["", "PageBreak",
+ PageBreakBelow->True,ExpressionUUID->"f270d708-14b6-44f0-8ecd-6e1aed587e79"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Solving the system", "Subsection",
+ CellChangeTimes->{{3.752677533238597*^9, 
+  3.752677537697246*^9}},ExpressionUUID->"301ac7b9-dfb7-41aa-8033-\
+837e0447d5c4"],
+
+Cell["\<\
+One method would be to guess numbers for x, until one works. Though this \
+seems tedious, it would be simple to code because a computer simply has to \
+iterate x and check if the mod equations hold true. In addition, the computer \
+would only need to check the numbers between 1 and lcm(3,4,5,6,7) inclusive, \
+because if a number outside that range works then one can subtract or add \
+lcm(3,4,5,6,7) until it is in the range.\
+\>", "Text",
+ CellChangeTimes->{{3.752924026546181*^9, 3.752924150759368*^9}, {
+   3.752924259155835*^9, 3.752924298084134*^9}, {3.752924376081767*^9, 
+   3.7529243823174553`*^9}, 
+   3.7529432324949603`*^9},ExpressionUUID->"e9c284e5-867b-497c-8092-\
+1160eebf589f"],
+
+Cell[TextData[{
+ "It is easy to see that 7=7+0=6+1=5+2 is a solution to the equations ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          RowBox[{
+           RowBox[{
+            RowBox[{"x", " ", 
+             RowBox[{
+              StyleBox["mod",
+               FontFamily->"Times",
+               FontWeight->"Plain",
+               FontSlant->"Plain"], "\[InvisibleApplication]", "5"}]}], 
+            "\[Congruent]", "2"}], "\n", 
+           RowBox[{
+            RowBox[{"x", " ", 
+             RowBox[{
+              StyleBox["mod",
+               FontFamily->"Times",
+               FontWeight->"Plain",
+               FontSlant->"Plain"], "\[InvisibleApplication]", "6"}]}], 
+            "\[Congruent]", "1"}], "\n", 
+           RowBox[{
+            RowBox[{"x", " ", 
+             RowBox[{
+              StyleBox["mod",
+               FontFamily->"Times",
+               FontWeight->"Plain",
+               FontSlant->"Plain"], "\[InvisibleApplication]", "7"}]}], 
+            "\[Congruent]", "0"}]}], " "}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False], TraditionalForm]],ExpressionUUID->
+  "99815fc6-5338-41d4-9e2c-ae76181797d5"],
+ ", so by the logic above the full solution to this smaller system would be ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"7", "+", 
+    RowBox[{"n", "\[CenterDot]", 
+     RowBox[{"lcm", "(", 
+      RowBox[{"5", ",", "6", ",", "7"}], ")"}]}]}], TraditionalForm]],
+  ExpressionUUID->"2ff9adf8-08ba-4958-a8cb-d63d403de909"],
+ ",  ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    RowBox[{"n", "\[Element]", "\[DoubleStruckCapitalZ]"}],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "40fcbe12-a239-4796-9dca-0e961065c087"],
+ ". Since 5, 6, and 7 are relatively prime, lcm(5,6,7)=",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"5", "\[Times]", "6", "\[Times]", "7"}], TraditionalForm]],
+  ExpressionUUID->"6e1b37c1-e2ab-4651-a6a0-14994b994b3f"],
+ "=210, so the general solution to this smaller system is 7 + 210n. Some \
+examples are 7, 7+210=217, 7+420=427, etc. However, we are looking at the \
+full system which is "
+}], "Text",
+ CellChangeTimes->{{3.752677640146132*^9, 3.7526778609789734`*^9}, {
+  3.752678528835437*^9, 
+  3.7526785326292553`*^9}},ExpressionUUID->"99c4ba27-d042-4a0c-b7cd-\
+07b4f69fa1f1"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TagBox[GridBox[{
+     {"\[Piecewise]", GridBox[{
+        {
+         RowBox[{
+          TagBox[
+           RowBox[{
+            RowBox[{"x", 
+             RowBox[{
+              StyleBox["mod",
+               FontFamily->"Times",
+               FontWeight->"Plain",
+               FontSlant->"Plain"], "\[InvisibleApplication]", "3"}]}], 
+            "\[Congruent]", "1"}],
+           "MathMLPresentationTag",
+           AutoDelete->True], "\n", 
+          RowBox[{
+           RowBox[{"x", " ", 
+            RowBox[{
+             StyleBox["mod",
+              FontFamily->"Times",
+              FontWeight->"Plain",
+              FontSlant->"Plain"], "\[InvisibleApplication]", "4"}]}], 
+           "\[Congruent]", "1"}], "\n", 
+          RowBox[{
+           RowBox[{"x", " ", 
+            RowBox[{
+             StyleBox["mod",
+              FontFamily->"Times",
+              FontWeight->"Plain",
+              FontSlant->"Plain"], "\[InvisibleApplication]", "5"}]}], 
+           "\[Congruent]", "2"}], "\n", 
+          RowBox[{
+           RowBox[{"x", " ", 
+            RowBox[{
+             StyleBox["mod",
+              FontFamily->"Times",
+              FontWeight->"Plain",
+              FontSlant->"Plain"], "\[InvisibleApplication]", "6"}]}], 
+           "\[Congruent]", "1"}], "\n", 
+          RowBox[{
+           RowBox[{"x", " ", 
+            RowBox[{
+             StyleBox["mod",
+              FontFamily->"Times",
+              FontWeight->"Plain",
+              FontSlant->"Plain"], "\[InvisibleApplication]", "7"}]}], 
+           "\[Congruent]", "0"}]}], " "}
+       },
+       AllowedDimensions->{2, Automatic},
+       Editable->True,
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+         "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.84]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}},
+       Selectable->True]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxItemSize->{
+     "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.35]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   "Piecewise",
+   DeleteWithContents->True,
+   Editable->False,
+   SelectWithContents->True,
+   Selectable->False], TraditionalForm]],
+ FormatType->
+  "TraditionalForm",ExpressionUUID->"92275be9-c7f2-4788-8f39-abbbf87e8d01"]], \
+"Text",
+ CellChangeTimes->{
+  3.7526758121505885`*^9, {3.7526760561053925`*^9, 3.752676082923434*^9}, {
+   3.752676154490514*^9, 3.7526761544986506`*^9}, {3.752676191803567*^9, 
+   3.752676256608573*^9}, {3.7526773813677015`*^9, 3.752677383115143*^9}, {
+   3.7526779642801175`*^9, 
+   3.7526779706689224`*^9}},ExpressionUUID->"31a2e400-075c-4dbb-8a32-\
+79ff31766912"],
+
+Cell[TextData[{
+ "so the earlier answer must also satisfy the equations x mod \
+\[InvisibleApplication]3\[Congruent]1 and x mod\[InvisibleApplication] 4\
+\[Congruent]1. if we look at the example 7, it does not work, because 7 mod 3 \
+",
+ Cell[BoxData[
+  FormBox[
+   TagBox["\[Congruent]",
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "12425705-4de8-4b13-8b64-340eea087049"],
+ " 1 but 7 mod 4 ",
+ Cell[BoxData[
+  FormBox[
+   TagBox["\[Congruent]",
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "19297ab6-8c40-4d72-abd9-8dfef0a3f54a"],
+ " 3. Now if we look at the example 217, it does work with the full system, \
+because 217 mod 3 ",
+ Cell[BoxData[
+  FormBox[
+   TagBox["\[Congruent]",
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "95de3b04-ce92-46c5-be3a-44ddaa012e2d"],
+ " 1 and 217 mod 4 ",
+ Cell[BoxData[
+  FormBox[
+   TagBox["\[Congruent]",
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "7357cb2d-f322-4f3b-9d9c-6e926272883e"],
+ " (216+1) mod 4 ",
+ Cell[BoxData[
+  FormBox[
+   TagBox["\[Congruent]",
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "8fd796d6-b63c-474f-b030-49673b0f44a8"],
+ " 1 mod 4 ",
+ Cell[BoxData[
+  FormBox[
+   TagBox["\[Congruent]",
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "002fe5b4-9fbe-4e00-b799-34ee6c83587b"],
+ " 1. "
+}], "Text",
+ CellChangeTimes->{{3.752678004029746*^9, 3.752678147487645*^9}, {
+  3.752916050281869*^9, 
+  3.7529160550916023`*^9}},ExpressionUUID->"79c94ad3-4db5-41b7-9ab8-\
+b64721665e51"],
+
+Cell[TextData[{
+ "Now that we have a solution, 217, the general solution will be ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"217", "+", 
+    RowBox[{"n", "\[CenterDot]", 
+     RowBox[{"lcm", "(", 
+      RowBox[{"3", ",", "4", ",", "5", ",", "6", ",", "7"}], ")"}]}]}], 
+   TraditionalForm]],ExpressionUUID->"cf4183f0-2f39-4e93-9440-73a835839eec"],
+ ",  ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    RowBox[{"n", "\[Element]", "\[DoubleStruckCapitalZ]"}],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "495a1994-f290-4b8a-b661-22e3294e91d1"],
+ " as discussed above. Since 6 is a multiple of 3 and 210=lcm(5,6,7)"
+}], "Text",
+ CellChangeTimes->{{3.7526781504966583`*^9, 
+  3.7526782525832443`*^9}},ExpressionUUID->"b8801c60-29ed-441e-968d-\
+c6b89789bae0"],
+
+Cell["lcm(3,4,5,6,7)=lcm(4,5,6,7)=lcm(4,210)", "Text",
+ CellChangeTimes->{{3.7526781504966583`*^9, 3.752678239430545*^9}, {
+  3.752678274120385*^9, 3.752678298483494*^9}, {3.7529435656557426`*^9, 
+  3.7529435681933246`*^9}},ExpressionUUID->"98122136-7605-46d6-8606-\
+9a5966e59729"],
+
+Cell[TextData[{
+ "210 is a multiple of 2=",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", "1"], TraditionalForm]],ExpressionUUID->
+  "3a8362a3-24ba-4242-8d53-f7a911b95804"],
+ " but not of 4=",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    SuperscriptBox["2", "2"],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "ce522d78-ef82-4f5d-9fc5-fa562f013bc6"],
+ ", so the lcm(4,210) needs one more 2 in its prime factorization than 210, so"
+}], "Text",
+ CellChangeTimes->{{3.7526783042407794`*^9, 
+  3.7526783833600864`*^9}},ExpressionUUID->"c12520b1-374c-474d-b08c-\
+001fc5a15e6c"],
+
+Cell["lcm(3,4,5,6,7)=lcm(4,210)=210\[Times]2=420.", "Text",
+ CellChangeTimes->{{3.7526781504966583`*^9, 3.752678239430545*^9}, {
+  3.752678274120385*^9, 3.752678298483494*^9}, {3.7526783595947895`*^9, 
+  3.752678402593195*^9}, {3.7526784691374087`*^9, 
+  3.7526785034603157`*^9}},ExpressionUUID->"506360e2-58f5-4f0c-9c42-\
+424c8fc60a9f"],
+
+Cell[TextData[{
+ "Plugging this into the original solution gives a general solution of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"217", "+", 
+    RowBox[{"420", "n"}]}], TraditionalForm]],ExpressionUUID->
+  "a68ca6bf-574a-4a08-ae18-d1310f30e134"],
+ ",  ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    RowBox[{"n", "\[Element]", "\[DoubleStruckCapitalZ]"}],
+    "MathMLPresentationTag",
+    AutoDelete->True], TraditionalForm]],ExpressionUUID->
+  "4400fd27-01ef-462f-a887-8a835484436c"],
+ ", so that is the number of eggs the farmer could have. "
+}], "Text",
+ CellChangeTimes->{{3.7526785058244915`*^9, 3.75267852033476*^9}, {
+   3.752678651038515*^9, 3.7526786774629617`*^9}, {3.7526787377146335`*^9, 
+   3.7526787698665867`*^9}, {3.752678840103389*^9, 3.752678884260485*^9}, {
+   3.752681996870267*^9, 3.752681999732484*^9}, 3.75292461330748*^9, {
+   3.7529246884461436`*^9, 
+   3.752924709425681*^9}},ExpressionUUID->"7a29e078-f443-458e-97c8-\
+21892e27d743"],
+
+Cell[TextData[{
+ "If we say that the farmer had a positive number of eggs, then the answer \
+becomes more restricted, so she can have ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"217", "+", 
+    RowBox[{"420", "n"}]}], TraditionalForm]],ExpressionUUID->
+  "7ed75fb6-97c5-4fc1-8333-cdb360e4d963"],
+ ",  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "\[Element]", 
+    TagBox[
+     SubscriptBox["\[DoubleStruckCapitalN]", "0"],
+     "MathMLPresentationTag",
+     AutoDelete->True]}], TraditionalForm]],ExpressionUUID->
+  "1e270dae-9ec9-4fa3-adfa-fa7a580b5e1d"],
+ " (n is a whole number)\t\t\t\t\t\t\t\t\t\t \[FilledSquare]"
+}], "Text",
+ CellChangeTimes->{{3.7526785058244915`*^9, 3.75267852033476*^9}, {
+   3.752678651038515*^9, 3.7526786774629617`*^9}, {3.7526787377146335`*^9, 
+   3.7526787698665867`*^9}, {3.752678840103389*^9, 3.752678884260485*^9}, {
+   3.752681996870267*^9, 3.752681999732484*^9}, 3.75292461330748*^9, {
+   3.7529246884461436`*^9, 3.752924797966643*^9}, {3.7529437292871943`*^9, 
+   3.7529437491481647`*^9}},ExpressionUUID->"6f8273ec-2754-4a18-8ca8-\
+241f0199f38a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Alternate Solution", "Subsection",
+ CellChangeTimes->{{3.7529251463974867`*^9, 
+  3.752925148767784*^9}},ExpressionUUID->"8a975432-70b4-497d-a194-\
+8083caa166e0"],
+
+Cell["\<\
+We could use the same solution as above to solve two mod equations, then add \
+the third into the system, then the 4th, then the 5th, then the 6th. At first \
+I tried this, but then I realized it would be easier if I started with the \
+last three because 7 was an easy to find solution to the last three equations.\
+\>", "Text",
+ CellChangeTimes->{{3.7529251545035458`*^9, 
+  3.752925244105423*^9}},ExpressionUUID->"6e2acb7c-847b-4561-b42b-\
+2cd246066748"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.752916073494396*^9, 
+  3.752916074641667*^9}},ExpressionUUID->"b7ec0c64-0a37-47af-9ff4-\
+b021464e1b17"],
+
+Cell[CellGroupData[{
+
+Cell["Extensions", "Subsection",
+ CellChangeTimes->{{3.7529160778481293`*^9, 
+  3.7529160793913736`*^9}},ExpressionUUID->"6c95071a-616e-4453-9b95-\
+0254cba7af7d"],
+
+Cell["\<\
+The problem could be extended by adding some other condition, such as that \
+the farmer has less than 400 eggs to make a unique solution possible. \
+Alternatively, the farmer could have observed more about her eggs and thus \
+make it a little longer.\
+\>", "Text",
+ CellChangeTimes->{{3.7529160809501753`*^9, 
+  3.752916164021183*^9}},ExpressionUUID->"4aae0e10-fcf4-4473-9eee-\
+ddfd8f3175bb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Self-assessment", "Subsection",
+ CellChangeTimes->{{3.752916219953972*^9, 
+  3.7529162243520603`*^9}},ExpressionUUID->"ee64d2a2-27b9-4db8-8ef6-\
+09730a3bcbeb"],
+
+Cell["\<\
+This work was helpful to practice with simultaneous mod equations and I think \
+I did good work. When I first did the problem I worked on it with Bharath and \
+he helped me check some cases, though he used the alternate solution (at \
+first) which was longer.\
+\>", "Text",
+ CellChangeTimes->{{3.7529162300929413`*^9, 3.752916268448458*^9}, {
+  3.7529248845097494`*^9, 3.7529248852033367`*^9}, {3.7529250694329834`*^9, 
+  3.7529251268177834`*^9}, {3.752925255123659*^9, 
+  3.752925270214777*^9}},ExpressionUUID->"e9246dcc-0a67-48df-a4e9-\
+d5da1ea0dab5"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{816, 772},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+PrintingStartingPageNumber->1,
+PrintingPageRange->{Automatic, Automatic},
+PageHeaders->{{
+   Cell[
+    TextData[{
+      StyleBox[
+       CounterBox["Page"], "PageNumber"], "   ", "|", " ", 
+      StyleBox[
+       ValueBox["FileName"], "Header"]}], "Header", 
+    CellMargins -> {{0, Inherited}, {Inherited, Inherited}}], None, None}, {
+   Cell[
+    TextData[
+     StyleBox[
+      ValueBox["Date"], TaggingRules -> {"Date", 1}]], "Header", 
+    CellMargins -> {{0, Inherited}, {Inherited, Inherited}}], 
+   Cell[
+    TextData["H"], "Header"], 
+   Cell[
+    TextData[{"Daniel", " ", "Abadjiev"}], "Header", 
+    CellMargins -> {{Inherited, 0}, {Inherited, Inherited}}]}},
+PageFooters->{{None, None, None}, {None, 
+   Cell[
+    TextData[{"Page", " ", 
+      CounterBox["Page", CounterFunction :> Identity], " ", "of", " ", 
+      CounterBox["LastPage", CounterFunction :> Identity]}], "Footer"], None}},
+PageHeaderLines->{False, False},
+PageFooterLines->{False, False},
+PrintingOptions->{"FacingPages"->False,
+"FirstPageFace"->Right,
+"FirstPageFooter"->True,
+"FirstPageHeader"->True},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 214, 4, 96, "Title",ExpressionUUID->"1b7b4a37-7b7a-4159-80fa-865748fd52b0"],
+Cell[CellGroupData[{
+Cell[819, 30, 152, 3, 67, "Section",ExpressionUUID->"faf54d16-8e7d-41bc-a77e-b5654dcd72bf"],
+Cell[974, 35, 537, 9, 100, "Text",ExpressionUUID->"d68c9408-7537-4aa7-88b3-6fbc8a376feb"],
+Cell[1514, 46, 559, 10, 100, "Text",ExpressionUUID->"6d71d4c8-2484-414a-ac87-e6a82b56f242"],
+Cell[2076, 58, 358, 7, 56, "Text",ExpressionUUID->"64dd18d2-3c82-429d-90fa-ff9995a3535e"],
+Cell[CellGroupData[{
+Cell[2459, 69, 171, 3, 53, "Subsection",ExpressionUUID->"5641c419-b322-49f8-bebb-3d456de61811"],
+Cell[2633, 74, 399, 8, 56, "Text",ExpressionUUID->"90b1cac9-c4d8-4c24-82bb-43659751a5c7"],
+Cell[3035, 84, 504, 17, 34, "Text",ExpressionUUID->"695f68c0-6698-4806-95a3-843ffb52add4"],
+Cell[3542, 103, 298, 6, 56, "Text",ExpressionUUID->"0353d245-6aec-4e80-b15e-2729a77faa77"],
+Cell[3843, 111, 540, 15, 34, "Text",ExpressionUUID->"8e296a95-4992-4069-bf32-812ccdaa0067"],
+Cell[4386, 128, 291, 6, 56, "Text",ExpressionUUID->"877b7e9a-9547-41a0-ac4f-44da5af4e059"],
+Cell[4680, 136, 542, 15, 34, "Text",ExpressionUUID->"9345db8b-c15b-4e3c-a9be-6790bb18c0c2"],
+Cell[5225, 153, 590, 15, 34, "Text",ExpressionUUID->"116ac239-1d1a-4bf9-8b96-9aa0669d496a"],
+Cell[5818, 170, 256, 6, 34, "Text",ExpressionUUID->"d8699c85-79c5-4db1-bed8-7a6b8a42015c"],
+Cell[6077, 178, 594, 15, 34, "Text",ExpressionUUID->"3550e776-b474-49a2-885d-98590e91bef1"],
+Cell[6674, 195, 272, 6, 34, "Text",ExpressionUUID->"6ff0e38e-f90c-4771-b395-ded4650bc517"],
+Cell[6949, 203, 3375, 93, 133, "Text",ExpressionUUID->"3347c66c-668e-458f-85f2-93d5af843734"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10373, 302, 150, 3, 67, "Section",ExpressionUUID->"9867a065-3227-4a58-b514-f331ea1234ca"],
+Cell[10526, 307, 453, 13, 34, "Text",ExpressionUUID->"e3e28734-8d7d-4f79-a320-15dc741680ea"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11016, 325, 155, 3, 67, "Section",ExpressionUUID->"c2fb0c0a-ad8e-4a70-ae29-b17c012b0be4"],
+Cell[CellGroupData[{
+Cell[11196, 332, 184, 3, 53, "Subsection",ExpressionUUID->"31ebaa5e-9b0d-4f3a-acc6-fda499656d8d"],
+Cell[11383, 337, 882, 24, 56, "Text",ExpressionUUID->"e116ebcc-51b4-45a8-bf2d-8bb1a220c7a6"],
+Cell[12268, 363, 791, 25, 34, "Text",ExpressionUUID->"a5ea03ed-3261-474d-919a-1f0a592d27ce"],
+Cell[13062, 390, 641, 20, 34, "Text",ExpressionUUID->"b99cefe7-32e9-4094-b1b2-c9cd06994005"],
+Cell[13706, 412, 177, 3, 34, "Text",ExpressionUUID->"62643892-5685-4c7b-a367-fc0019a5351b"],
+Cell[13886, 417, 858, 28, 51, "Text",ExpressionUUID->"a831f54b-295f-43f5-9624-c53a111a117f"],
+Cell[14747, 447, 355, 7, 34, "Text",ExpressionUUID->"a03b5228-2fa4-4877-9c07-d89a8dd207c2"],
+Cell[15105, 456, 1378, 43, 51, "Text",ExpressionUUID->"68bef93b-bb61-432f-b4ad-d0bad0ad9515"],
+Cell[16486, 501, 1718, 49, 100, "Text",ExpressionUUID->"87705cd3-16e3-4210-8ad3-bb3730e5c049"],
+Cell[18207, 552, 4196, 119, 155, "Text",ExpressionUUID->"bf9fdc10-68f5-4829-baf7-d03d8ea75282"],
+Cell[22406, 673, 99, 1, 4, "PageBreak",ExpressionUUID->"f270d708-14b6-44f0-8ecd-6e1aed587e79",
+ PageBreakBelow->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22542, 679, 166, 3, 53, "Subsection",ExpressionUUID->"301ac7b9-dfb7-41aa-8033-837e0447d5c4"],
+Cell[22711, 684, 704, 12, 100, "Text",ExpressionUUID->"e9c284e5-867b-497c-8092-1160eebf589f"],
+Cell[23418, 698, 3625, 97, 151, "Text",ExpressionUUID->"99c4ba27-d042-4a0c-b7cd-07b4f69fa1f1"],
+Cell[27046, 797, 3407, 94, 133, "Text",ExpressionUUID->"31a2e400-075c-4dbb-8a32-79ff31766912"],
+Cell[30456, 893, 1700, 52, 78, "Text",ExpressionUUID->"79c94ad3-4db5-41b7-9ab8-b64721665e51"],
+Cell[32159, 947, 791, 21, 56, "Text",ExpressionUUID->"b8801c60-29ed-441e-968d-c6b89789bae0"],
+Cell[32953, 970, 281, 4, 34, "Text",ExpressionUUID->"98122136-7605-46d6-8606-9a5966e59729"],
+Cell[33237, 976, 614, 18, 56, "Text",ExpressionUUID->"c12520b1-374c-474d-b08c-001fc5a15e6c"],
+Cell[33854, 996, 337, 5, 34, "Text",ExpressionUUID->"506360e2-58f5-4f0c-9c42-424c8fc60a9f"],
+Cell[34194, 1003, 954, 23, 56, "Text",ExpressionUUID->"7a29e078-f443-458e-97c8-21892e27d743"],
+Cell[35151, 1028, 1081, 25, 56, "Text",ExpressionUUID->"6f8273ec-2754-4a18-8ca8-241f0199f38a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36269, 1058, 168, 3, 53, "Subsection",ExpressionUUID->"8a975432-70b4-497d-a194-8083caa166e0"],
+Cell[36440, 1063, 466, 8, 78, "Text",ExpressionUUID->"6e2acb7c-847b-4561-b42b-2cd246066748"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36955, 1077, 155, 3, 67, "Section",ExpressionUUID->"b7ec0c64-0a37-47af-9ff4-b021464e1b17"],
+Cell[CellGroupData[{
+Cell[37135, 1084, 162, 3, 53, "Subsection",ExpressionUUID->"6c95071a-616e-4453-9b95-0254cba7af7d"],
+Cell[37300, 1089, 402, 8, 78, "Text",ExpressionUUID->"4aae0e10-fcf4-4473-9eee-ddfd8f3175bb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37739, 1102, 165, 3, 53, "Subsection",ExpressionUUID->"ee64d2a2-27b9-4db8-8ef6-09730a3bcbeb"],
+Cell[37907, 1107, 563, 10, 78, "Text",ExpressionUUID->"e9246dcc-0a67-48df-a4e9-d5da1ea0dab5"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
